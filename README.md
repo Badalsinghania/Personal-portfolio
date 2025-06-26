@@ -7,7 +7,7 @@ A **responsive personal portfolio website** built using **HTML**, **CSS**, and *
 ## 🌐 Live Demo
 
 > [View Portfolio](https://badal-singh-portfolio.netlify.app/)  
-> *(Replace with your actual deployed link if available)*
+
 
 ---
 
