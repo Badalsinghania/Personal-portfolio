@@ -1,0 +1,3 @@
+# The portfolio site (index.html, style.css, script.js, images/) lives in the js/ folder.
+[build]
+  publish = "js"
