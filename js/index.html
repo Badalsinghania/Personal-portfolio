@@ -1,10 +1,26 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Badal Singh | Senior Software Developer & Full-Stack Engineer</title>
     <meta name="description" content="Portfolio of Badal Singh - Senior Software Developer (Open Source) & Full-Stack Developer specializing in scalable, secure enterprise and government systems.">
+    <meta name="author" content="Badal Singh">
+    <meta name="theme-color" content="#08090a">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Badal Singh | Senior Software Developer & Full-Stack Engineer">
+    <meta property="og:description" content="Government digital platforms, secure enterprise systems and modern full-stack web applications engineered by Badal Singh.">
+    <meta property="og:image" content="images/my-picture.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Badal Singh | Senior Software Developer & Full-Stack Engineer">
+    <meta name="twitter:description" content="Government digital platforms, secure enterprise systems and modern full-stack web applications.">
+    <meta name="twitter:image" content="images/my-picture.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ccff00'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-size='42' font-weight='700' text-anchor='middle' fill='%230a0e00'%3EB%3C/text%3E%3C/svg%3E">
+
+    <script>document.documentElement.classList.add('js-enabled');</script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,13 +31,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=9">
 
     <!-- Essential Libraries -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     <!-- Background Ambient Glow Effects -->
     <div class="ambient-glow glow-1" aria-hidden="true"></div>
@@ -31,7 +50,7 @@
     <div class="scroll-progress-bar" id="scrollProgress"></div>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-up-btn" id="scrollUpBtn" aria-label="Scroll to top">
+    <button type="button" class="scroll-up-btn" id="scrollUpBtn" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -49,6 +68,7 @@
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
 
@@ -56,7 +76,7 @@
                     <a href="images/BadalCV.pdf" class="btn btn-outline btn-sm nav-cv-btn" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-file-arrow-down"></i> Resume
                     </a>
-                    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
                         <span class="bar"></span>
                         <span class="bar"></span>
                         <span class="bar"></span>
@@ -70,7 +90,7 @@
     <div class="nav-overlay" id="navOverlay"></div>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content" tabindex="-1">
 
         <!-- Hero Section -->
         <section class="hero-section" id="home">
@@ -91,7 +111,7 @@
                     </h1>
 
                     <div class="hero-subtitle animate-fade-in delay-2">
-                        <span>I build</span> <span class="typing"></span>
+                        <span>I build</span><br class="subtitle-break"> <span class="typing"></span>
                     </div>
 
                     <p class="hero-description animate-fade-in delay-3">
@@ -116,7 +136,7 @@
                         </a>
                         <a href="#contact" class="btn btn-glass">
                             <span>Get In Touch</span>
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-paper-plane"></i>
                         </a>
                         <a href="images/BadalCV.pdf" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
                             <i class="fas fa-download"></i>
@@ -133,7 +153,7 @@
                         <a href="https://github.com/Badalsinghania/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub Profile">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="mailto:badalsingh@gmail.com" class="social-icon" aria-label="Email Me">
+                        <a href="mailto:baadalsinghh01@gmail.com" class="social-icon" aria-label="Email Me">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
@@ -158,10 +178,10 @@
                             </div>
 
                             <div class="floating-badge badge-bottom">
-                                <div class="badge-icon"><i class="fas fa-shield-check"></i></div>
+                                <div class="badge-icon"><i class="fas fa-code"></i></div>
                                 <div class="badge-content">
-                                    <span class="badge-title">JEXONS &amp; JSBCL</span>
-                                    <span class="badge-subtitle">Security Compliance</span>
+                                    <span class="badge-title">Full Stack Developer</span>
+                                    <span class="badge-subtitle">PHP &middot; CodeIgnitor &middot; Laravel</span>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +220,7 @@
                             I am a Senior Software Developer (Open Source) at the <strong>Department of Excise &amp; Prohibition, Government of Jharkhand</strong>. My primary focus centers on engineering scalable, secure web architectures, compliance monitoring systems (JEXONS &amp; JSBCL), and high-volume public platforms such as the state's Excise e-Lottery System.
                         </p>
                         <p class="about-paragraph">
-                            With over 3 years of hands-on experience spanning enterprise development at <strong>Sigma E Solutions</strong> and systems programming at <strong>Tata Steel</strong>, I combine backend rigor (Java, PHP, Laravel, SQL) with modern frontend development and UX/UI principles.
+                            With over 3 years of hands-on experience spanning enterprise development at <strong>Sigma E Solutions</strong> and systems programming at <strong>Tata Steel</strong>, I combine backend rigor (PHP, CodeIgnitor, Laravel, SQL) with modern frontend development and UX/UI principles.
                         </p>
                         <p class="about-paragraph">
                             Recognized with an official <strong>Certificate of Appreciation</strong> from the Government of Jharkhand for implementing key technical initiatives under the Excise Rules 2025, I continuously strive to deliver software that balances rock-solid stability, citizen accessibility, and performance.
@@ -625,12 +645,12 @@
                 </div>
 
                 <!-- Project Category Filters -->
-                <div class="project-filters" role="tablist" aria-label="Filter projects">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="govt">Govt &amp; Security</button>
-                    <button class="filter-btn" data-filter="enterprise">Enterprise Systems</button>
-                    <button class="filter-btn" data-filter="web">Web &amp; E-Commerce</button>
-                    <button class="filter-btn" data-filter="app">Mobile &amp; Utility</button>
+                <div class="project-filters" role="group" aria-label="Filter projects">
+                    <button type="button" class="filter-btn active" data-filter="all">All Projects</button>
+                    <button type="button" class="filter-btn" data-filter="govt">Govt &amp; Security</button>
+                    <button type="button" class="filter-btn" data-filter="enterprise">Enterprise Systems</button>
+                    <button type="button" class="filter-btn" data-filter="web">Web &amp; E-Commerce</button>
+                    <button type="button" class="filter-btn" data-filter="app">Mobile &amp; Utility</button>
                 </div>
 
                 <!-- Projects Grid -->
@@ -964,7 +984,300 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Gallery Section — certifications showcase -->
+        <section class="section gallery-section" id="gallery">
+            <div class="container">
+                <div class="section-header gallery-header">
+                    <span class="section-badge">Certifications &amp; Training</span>
+                    <h2 class="section-title">The <span class="gradient-text">Credentials</span></h2>
+                    <p class="section-lead">Eight verified certificates — government service, industrial training, design and full-stack coursework, presented as a scrolling image gallery.</p>
+                </div>
+            </div>
+
+            <div class="gallery-shell container">
+                <div class="gallery-toolbar">
+                    <div class="gallery-index">
+                        <span class="gallery-index-num" id="galleryShown">08</span>
+                        <span class="gallery-index-label">Certificates</span>
+                    </div>
+
+                    <div class="gallery-filters" role="group" aria-label="Filter certificates by category">
+                        <button type="button" class="gallery-filter active" data-gallery-filter="all">All</button>
+                        <button type="button" class="gallery-filter" data-gallery-filter="govt">Government</button>
+                        <button type="button" class="gallery-filter" data-gallery-filter="enterprise">Enterprise</button>
+                        <button type="button" class="gallery-filter" data-gallery-filter="web">Web</button>
+                        <button type="button" class="gallery-filter" data-gallery-filter="design">Design</button>
+                    </div>
+                </div>
+
+                <div class="gallery-stage">
+                    <div class="gallery-viewport" id="galleryViewport">
+                        <div class="gallery-grid" id="galleryGrid">
+
+                    <article class="gallery-item" data-cat="govt" data-art="art-1" data-image="images/appriation.jpg" data-kicker="Government Service" data-year="2025" data-title="Prashasti Patra — Jharkhand Govt" data-desc="Certificate of appreciation from the Production &amp; Industrial Relations Department, Government of Jharkhand, for successfully completing the Jharkhand Utpaad (Madira Ki Khudra Bikri Hetu Dukano Ki Bandobast) Niyamawali 2025 arrangements." data-tech="Jharkhand Sarkar|Excise|Public Administration" tabindex="0" role="button" aria-label="Open certificate 01: Prashasti Patra, Jharkhand Government">
+                        <div class="gallery-media">
+                            <img class="gallery-img" src="images/appriation.jpg" alt="Prashasti Patra from the Production &amp; Industrial Relations Department, Government of Jharkhand, awarded to Badal Singh, Senior Programmer" loading="lazy" decoding="async">
+                            <span class="gallery-num">01</span>
+                            <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
+                        </div>
+                        <div class="gallery-caption">
+                            <div class="gallery-meta">
+                                <span class="gallery-kicker">Government Service</span>
+                                <span class="gallery-year">2025</span>
+                            </div>
+                            <h3 class="gallery-title">Prashasti Patra — Jharkhand Govt</h3>
+                            <p class="gallery-desc">Appreciation letter for successfully completing shop arrangements under the Jharkhand Utpaad rules 2025.</p>
+                            <div class="gallery-tech">
+                                <span>Excise</span><span>Public Admin</span><span>Operations</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item" data-cat="govt" data-art="art-2" data-image="images/ui-ux.jpg" data-kicker="Government Workshop" data-year="2025" data-title="UX &amp; Design System Workshop" data-desc="Certificate of Participation from the Ministry of Electronics &amp; Information Technology, Digital India, NeGD, UX4G and NIC for the Awareness and Sensitization Workshop on User Experience and Design System on 23/12/2025." data-tech="UX4G|Digital India|MeitY|NIC" tabindex="0" role="button" aria-label="Open certificate 02: UX and Design System Workshop">
+                        <div class="gallery-media">
+                            <img class="gallery-img" src="images/ui-ux.jpg" alt="Certificate of Participation from UX4G, Digital India and NIC for the Awareness and Sensitization Workshop on User Experience and Design System" loading="lazy" decoding="async">
+                            <span class="gallery-num">02</span>
+                            <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
+                        </div>
+                        <div class="gallery-caption">
+                            <div class="gallery-meta">
+                                <span class="gallery-kicker">Government Workshop</span>
+                                <span class="gallery-year">2025</span>
+                            </div>
+                            <h3 class="gallery-title">UX &amp; Design System Workshop</h3>
+                            <p class="gallery-desc">Awareness and sensitization on User Experience and Design System by MeitY, Digital India, NeGD and NIC.</p>
+                            <div class="gallery-tech">
+                                <span>UX</span><span>Design System</span><span>Digital India</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item" data-cat="design" data-art="art-3" data-image="images/figma.jpg" data-kicker="Design Tooling" data-year="2024" data-title="Figma UI Design Playground" data-desc="Mindluster certificate of achievement for successfully completing the Figma UI design Playground basics course (Certified No. 3a8ebae2, 2024-11-21)." data-tech="Figma|UI Design|Prototyping" tabindex="0" role="button" aria-label="Open certificate 03: Figma UI Design Playground">
+                        <div class="gallery-media">
+                            <img class="gallery-img" src="images/figma.jpg" alt="Mindluster certificate of achievement for the Figma UI design Playground basics course, awarded to Badal Singh" loading="lazy" decoding="async">
+                            <span class="gallery-num">03</span>
+                            <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
+                        </div>
+                        <div class="gallery-caption">
+                            <div class="gallery-meta">
+                                <span class="gallery-kicker">Design Tooling</span>
+                                <span class="gallery-year">2024</span>
+                            </div>
+                            <h3 class="gallery-title">Figma UI Design Playground</h3>
+                            <p class="gallery-desc">Course completion certificate on Figma UI design playground basics from Mindluster.</p>
+                            <div class="gallery-tech">
+                                <span>Figma</span><span>UI Design</span><span>Prototyping</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item" data-cat="web" data-art="art-4" data-image="images/cert-geeksforgeeks-fullstack.jpg" data-kicker="Full Stack Bootcamp" data-year="2024" data-title="Full Stack Developer Bootcamp" data-desc="GeeksforGeeks certificate of course completion for a 6-week Full Stack Developer Bootcamp — Master Frontend to Backend, signed by founder Sandeep Jain." data-tech="Frontend|Backend|Full Stack|GeeksforGeeks" tabindex="0" role="button" aria-label="Open certificate 04: Full Stack Developer Bootcamp">
+                        <div class="gallery-media">
+                            <img class="gallery-img" src="images/cert-geeksforgeeks-fullstack.jpg" alt="GeeksforGeeks certificate of course completion for a 6-week Full Stack Developer Bootcamp, awarded to Badal Singh" loading="lazy" decoding="async">
+                            <span class="gallery-num">04</span>
+                            <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
+                        </div>
+                        <div class="gallery-caption">
+                            <div class="gallery-meta">
+                                <span class="gallery-kicker">Full Stack Bootcamp</span>
+                                <span class="gallery-year">2024</span>
+                            </div>
+                            <h3 class="gallery-title">Full Stack Developer Bootcamp</h3>
+                            <p class="gallery-desc">6-week GeeksforGeeks course covering the journey from frontend to backend development.</p>
+                            <div class="gallery-tech">
+                                <span>Frontend</span><span>Backend</span><span>Full Stack</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item" data-cat="enterprise" data-art="art-5" data-image="images/cert-tata-vocational.jpg" data-kicker="Industrial Training" data-year="2022" data-title="Tata Steel Vocational Training" data-desc="Prashikshan 2022 certificate from Shavak Nanavati Technical Institute (ISO 9001:2015) for a vocational training programme at Tata Steel Ltd., Jamshedpur from 23 May to 20 June 2022, with a project on Window Based Database Management System." data-tech="Tata Steel|DBMS|Learning &amp; Development" tabindex="0" role="button" aria-label="Open certificate 05: Tata Steel Vocational Training">
+                        <div class="gallery-media">
+                            <img class="gallery-img" src="images/cert-tata-vocational.jpg" alt="Prashikshan 2022 certificate for vocational training at Tata Steel Ltd. Jamshedpur, awarded to Badal Singh" loading="lazy" decoding="async">
+                            <span class="gallery-num">05</span>
+                            <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
+                        </div>
+                        <div class="gallery-caption">
+                            <div class="gallery-meta">
+                                <span class="gallery-kicker">Industrial Training</span>
+                                <span class="gallery-year">2022</span>
+                            </div>
+                            <h3 class="gallery-title">Tata Steel Vocational Training</h3>
+                            <p class="gallery-desc">Prashikshan 2022 programme at Tata Steel Ltd., Jamshedpur — project on Window Based Database Management System.</p>
+                            <div class="gallery-tech">
+                                <span>Tata Steel</span><span>DBMS</span><span>Training</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item" data-cat="enterprise" data-art="art-6" data-image="images/cert-digishala-excel.jpg" data-kicker="Productivity Suite" data-year="2022" data-title="Advance Microsoft Excel" data-desc="Tata Steel DigiShala e-learning certificate for successfully completing the Advance Microsoft Excel programme on 25-06-2022, issued by Jaya Singh Panda, Chief Learning &amp; Development." data-tech="MS Excel|DigiShala|Data" tabindex="0" role="button" aria-label="Open certificate 06: Advance Microsoft Excel">
+                        <div class="gallery-media">
+                            <img class="gallery-img" src="images/cert-digishala-excel.jpg" alt="Tata Steel DigiShala certificate for completing the Advance Microsoft Excel e-learning programme, awarded to Badal Singh" loading="lazy" decoding="async">
+                            <span class="gallery-num">06</span>
+                            <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
+                        </div>
+                        <div class="gallery-caption">
+                            <div class="gallery-meta">
+                                <span class="gallery-kicker">Productivity Suite</span>
+                                <span class="gallery-year">2022</span>
+                            </div>
+                            <h3 class="gallery-title">Advance Microsoft Excel</h3>
+                            <p class="gallery-desc">Tata Steel DigiShala e-learning certificate for completing the Advance Microsoft Excel programme.</p>
+                            <div class="gallery-tech">
+                                <span>MS Excel</span><span>Data</span><span>DigiShala</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item" data-cat="enterprise" data-art="art-7" data-image="images/cert-digishala-msoffice.jpg" data-kicker="Productivity Suite" data-year="2022" data-title="MS Office" data-desc="Tata Steel DigiShala e-learning certificate for successfully completing the MS Office programme on 25-06-2022, issued by Jaya Singh Panda, Chief Learning &amp; Development." data-tech="MS Office|DigiShala|Productivity" tabindex="0" role="button" aria-label="Open certificate 07: MS Office">
+                        <div class="gallery-media">
+                            <img class="gallery-img" src="images/cert-digishala-msoffice.jpg" alt="Tata Steel DigiShala certificate for completing the MS Office e-learning programme, awarded to Badal Singh" loading="lazy" decoding="async">
+                            <span class="gallery-num">07</span>
+                            <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
+                        </div>
+                        <div class="gallery-caption">
+                            <div class="gallery-meta">
+                                <span class="gallery-kicker">Productivity Suite</span>
+                                <span class="gallery-year">2022</span>
+                            </div>
+                            <h3 class="gallery-title">MS Office</h3>
+                            <p class="gallery-desc">Tata Steel DigiShala e-learning certificate for completing the MS Office programme.</p>
+                            <div class="gallery-tech">
+                                <span>MS Office</span><span>Productivity</span><span>DigiShala</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item" data-cat="web" data-art="art-8" data-image="images/cert-mindluster-webdev.jpg" data-kicker="Web Development" data-year="2023" data-title="Introduction to Web Development" data-desc="Mindluster certificate of achievement (Certified No. 5519736973) for successfully completing a course about Introduction to Web Development on 2023-06-20." data-tech="Web Dev|HTML|CSS|Mindluster" tabindex="0" role="button" aria-label="Open certificate 08: Introduction to Web Development">
+                        <div class="gallery-media">
+                            <img class="gallery-img" src="images/cert-mindluster-webdev.jpg" alt="Mindluster certificate of achievement for the Introduction to Web Development course, awarded to Badal Singh" loading="lazy" decoding="async">
+                            <span class="gallery-num">08</span>
+                            <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
+                        </div>
+                        <div class="gallery-caption">
+                            <div class="gallery-meta">
+                                <span class="gallery-kicker">Web Development</span>
+                                <span class="gallery-year">2023</span>
+                            </div>
+                            <h3 class="gallery-title">Introduction to Web Development</h3>
+                            <p class="gallery-desc">Mindluster course certificate covering the fundamentals of web development.</p>
+                            <div class="gallery-tech">
+                                <span>Web Dev</span><span>HTML</span><span>CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                        </div>
+                    </div>
+
+                    <div class="gallery-rail-footer">
+                        <span class="gallery-note">Official certificates · click any card to enlarge</span>
+
+                        <div class="gallery-rail-progress" aria-hidden="true">
+                            <span class="gallery-rail-bar" id="galleryBar"></span>
+                        </div>
+
+                        <div class="gallery-rail-nav">
+                            <button type="button" class="gallery-arrow" id="galleryPrev" aria-label="Previous certificate">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <span class="gallery-rail-count"><span id="galleryRailActive">01</span><span class="lightbox-sep">/</span><span id="galleryRailTotal">08</span></span>
+                            <button type="button" class="gallery-arrow" id="galleryNext" aria-label="Next certificate">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="gallery-empty" id="galleryEmpty" hidden>No certificates in this category yet.</p>
+            </div>
+        </section>
+
+        <!-- Gallery Lightbox -->
+        <div class="lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" aria-describedby="lightboxDesc" aria-hidden="true" inert>
+            <div class="lightbox-backdrop" data-lightbox-close></div>
+
+            <div class="lightbox-shell" role="document">
+                <header class="lightbox-top">
+                    <span class="lightbox-brand">Badal<span class="logo-dot">.</span>dev — Certificates</span>
+                    <span class="lightbox-counter"><span id="lightboxIndex">01</span><span class="lightbox-sep">/</span><span id="lightboxTotal">08</span></span>
+                    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close certificate viewer">
+                        <i class="fas fa-xmark"></i>
+                    </button>
+                </header>
+
+                <div class="lightbox-body">
+                    <div class="lightbox-stage">
+                        <div class="lightbox-art" id="lightboxArt" aria-hidden="true"></div>
+                    </div>
+
+                    <aside class="lightbox-panel">
+                        <span class="lightbox-kicker" id="lightboxKicker"></span>
+                        <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                        <p class="lightbox-desc" id="lightboxDesc"></p>
+                        <div class="lightbox-tech" id="lightboxTech"></div>
+
+                        <div class="lightbox-controls">
+                            <button type="button" class="lightbox-nav" id="lightboxPrev" aria-label="Previous certificate">
+                                <i class="fas fa-arrow-left"></i><span>Prev</span>
+                            </button>
+                            <button type="button" class="lightbox-nav" id="lightboxNext" aria-label="Next certificate">
+                                <span>Next</span><i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horizontal Scrollytelling Track -->
+        <section class="horizontal-scroll-section" id="horizontal-scroll" aria-label="Capabilities showcase">
+            <div class="hscroll-top container">
+                <span class="hscroll-eyebrow"><span class="hscroll-dot"></span> Capability Track</span>
+                <span class="hscroll-hint">Scroll to explore <i class="fas fa-arrow-right"></i></span>
+                <span class="hscroll-progress"><span class="hscroll-progress-fill" id="hscrollBar"></span></span>
+            </div>
+
+            <div class="horizontal-scroll-container">
+                <div class="horizontal-scroll-track">
+                    <div class="scroll-content-wrapper">
+                        <div class="scroll-content">
+                            <div class="scroll-card">
+                                <div class="scroll-card-icon"><i class="fas fa-bezier-curve"></i></div>
+                                <h3>Design Systems</h3>
+                                <p>Component libraries, design tokens, and visual consistency across platforms.</p>
+                            </div>
+                        </div>
+                        <div class="scroll-content">
+                            <div class="scroll-card">
+                                <div class="scroll-card-icon"><i class="fas fa-mobile-screen"></i></div>
+                                <h3>Mobile Solutions</h3>
+                                <p>Cross-platform applications with native performance and seamless UX.</p>
+                            </div>
+                        </div>
+                        <div class="scroll-content">
+                            <div class="scroll-card">
+                                <div class="scroll-card-icon"><i class="fas fa-server"></i></div>
+                                <h3>Enterprise Architecture</h3>
+                                <p>Scalable backend systems with robust security and reliability.</p>
+                            </div>
+                        </div>
+                        <div class="scroll-content">
+                            <div class="scroll-card">
+                                <div class="scroll-card-icon"><i class="fas fa-database"></i></div>
+                                <h3>Data Management</h3>
+                                <p>SQL optimization, real-time analytics, and business intelligence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-nav">
+                    <button type="button" class="scroll-dot active" aria-label="Go to capability 1"></button>
+                    <button type="button" class="scroll-dot" aria-label="Go to capability 2"></button>
+                    <button type="button" class="scroll-dot" aria-label="Go to capability 3"></button>
+                    <button type="button" class="scroll-dot" aria-label="Go to capability 4"></button>
+                </div>
+            </div>
+        </section>
         <section class="section contact-section" id="contact">
             <div class="container">
                 <div class="section-header">
@@ -987,11 +1300,20 @@
 
                         <div class="contact-items-list">
                             
-                            <a href="mailto:badalsingh@gmail.com" class="contact-link-item">
+                            <a href="mailto:baadalsinghh01@gmail.com" class="contact-link-item">
                                 <div class="item-icon"><i class="fas fa-envelope"></i></div>
                                 <div class="item-text">
                                     <span class="item-label">Email</span>
                                     <span class="item-value">baadalsinghh01@gmail.com</span>
+                                </div>
+                                <div class="item-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
+                            </a>
+
+                            <a href="https://wa.me/917258097358?text=Hi%20Badal%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" class="contact-link-item">
+                                <div class="item-icon"><i class="fab fa-whatsapp"></i></div>
+                                <div class="item-text">
+                                    <span class="item-label">WhatsApp — free &amp; instant</span>
+                                    <span class="item-value">+91 72580 97358</span>
                                 </div>
                                 <div class="item-arrow"><i class="fas fa-arrow-up-right-from-square"></i></div>
                             </a>
@@ -1018,7 +1340,7 @@
                                 <div class="item-icon"><i class="fas fa-location-dot"></i></div>
                                 <div class="item-text">
                                     <span class="item-label">Location</span>
-                                    <span class="item-value">Ranchi &amp; Jamshedpur, Jharkhand, India</span>
+                                    <span class="item-value">Ranchi, Jharkhand, India</span>
                                 </div>
                             </div>
 
@@ -1029,7 +1351,7 @@
                     <div class="contact-form-column">
                         <div class="contact-form-wrapper">
                             <h3 class="form-title">Send a Direct Message</h3>
-                            <p class="form-subtitle">Fill in the form below and I will respond promptly.</p>
+                            <p class="form-subtitle">Fill in the form and choose how you would like to reach me — email or a free WhatsApp message.</p>
 
                             <form id="portfolioContactForm" novalidate>
                                 <div class="form-row">
@@ -1037,7 +1359,7 @@
                                         <label for="contactName">Your Name <span class="required">*</span></label>
                                         <div class="input-with-icon">
                                             <i class="fas fa-user input-icon"></i>
-                                            <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+                                            <input type="text" id="contactName" name="name" class="form-input" placeholder="e.g. Your Name" aria-describedby="nameError" required>
                                         </div>
                                         <span class="error-msg" id="nameError">Please enter your name.</span>
                                     </div>
@@ -1046,7 +1368,7 @@
                                         <label for="contactEmail">Email Address <span class="required">*</span></label>
                                         <div class="input-with-icon">
                                             <i class="fas fa-envelope input-icon"></i>
-                                            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="name@company.com" required>
+                                            <input type="email" id="contactEmail" name="email" class="form-input" placeholder="name@company.com" aria-describedby="emailError" required>
                                         </div>
                                         <span class="error-msg" id="emailError">Please enter a valid email address.</span>
                                     </div>
@@ -1056,7 +1378,7 @@
                                     <label for="contactSubject">Subject <span class="required">*</span></label>
                                     <div class="input-with-icon">
                                         <i class="fas fa-tag input-icon"></i>
-                                        <input type="text" id="contactSubject" name="subject" class="form-input" placeholder="Project Inquiry / Job Opportunity" required>
+                                        <input type="text" id="contactSubject" name="subject" class="form-input" placeholder="Project Inquiry / Job Opportunity" aria-describedby="subjectError" required>
                                     </div>
                                     <span class="error-msg" id="subjectError">Please provide a subject.</span>
                                 </div>
@@ -1065,7 +1387,7 @@
                                     <label for="contactMessage">Your Message <span class="required">*</span></label>
                                     <div class="input-with-icon textarea-icon-wrapper">
                                         <i class="fas fa-message input-icon"></i>
-                                        <textarea id="contactMessage" name="message" rows="5" class="form-input" placeholder="Describe your project, timeline, or requirement..." required></textarea>
+                                        <textarea id="contactMessage" name="message" rows="5" class="form-input" placeholder="Describe your project, timeline, or requirement..." aria-describedby="messageError" required></textarea>
                                     </div>
                                     <span class="error-msg" id="messageError">Please write your message (at least 15 characters).</span>
                                 </div>
@@ -1074,6 +1396,14 @@
                                     <span class="btn-text">Send Message</span>
                                     <i class="fas fa-paper-plane"></i>
                                 </button>
+
+                                <div class="form-direct">
+                                    <span class="form-direct-label">Need a reply right away? WhatsApp is free and instant.</span>
+                                    <button type="button" class="btn btn-whatsapp btn-block" id="whatsappSendBtn">
+                                        <i class="fab fa-whatsapp"></i>
+                                        <span>Send on WhatsApp</span>
+                                    </button>
+                                </div>
 
                                 <div class="form-feedback" id="formFeedback" role="alert"></div>
                             </form>
@@ -1103,6 +1433,7 @@
                     <a href="#skills">Skills</a>
                     <a href="#experience">Experience</a>
                     <a href="#projects">Projects</a>
+                    <a href="#gallery">Gallery</a>
                     <a href="#contact">Contact</a>
                     <a href="images/BadalCV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
                 </div>
@@ -1110,7 +1441,8 @@
                 <div class="footer-socials">
                     <a href="https://www.linkedin.com/in/badalsinghania/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/Badalsinghania/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="mailto:badalsingh@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/917258097358" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:baadalsinghh01@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
 
@@ -1118,13 +1450,37 @@
 
             <div class="footer-bottom">
                 <p>&copy; 2026 Badal Singh. All rights reserved.</p>
-                <p class="footer-subtext">Senior Software Developer &bull; Government of Jharkhand (Excise &amp; Prohibition Dept)</p>
+                <!-- <p class="footer-subtext">Senior Software Developer &bull; Government of Jharkhand (Excise &amp; Prohibition Dept)</p> -->
             </div>
         </div>
     </footer>
 
     <!-- Main JavaScript Logic -->
-    <script src="script.js"></script>
+    <script src="script.js?v=9"></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Badal Singh",
+        "jobTitle": "Senior Software Developer (Open Source)",
+        "description": "Full-stack developer engineering secure government platforms and enterprise systems.",
+        "email": "mailto:baadalsinghh01@gmail.com",
+        "worksFor": {
+            "@type": "GovernmentOrganization",
+            "name": "Department of Excise & Prohibition, Government of Jharkhand"
+        },
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Jharkhand University of Technology"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/badalsinghania/",
+            "https://github.com/Badalsinghania/"
+        ],
+        "knowsAbout": ["Java", "PHP", "Laravel", "SQL", "JavaScript", "Drupal", "Security Compliance"]
+    }
+    </script>
 
 </body>
 </html>
