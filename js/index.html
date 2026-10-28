@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=18">
 
     <!-- Essential Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" defer></script>
@@ -990,7 +990,7 @@
                 <div class="section-header gallery-header">
                     <span class="section-badge">Certifications &amp; Training</span>
                     <h2 class="section-title">The <span class="gradient-text">Credentials</span></h2>
-                    <p class="section-lead">Eight verified certificates — government service, industrial training, design and full-stack coursework, presented as a scrolling image gallery.</p>
+                    <p class="section-lead">Eight verified certificates — government service, industrial training, design and full-stack coursework — presented as cards, one certificate per scroll.</p>
                 </div>
             </div>
 
@@ -1011,25 +1011,21 @@
                 </div>
 
                 <div class="gallery-stage">
+                    <div class="gallery-chapter">
+                        <span class="gallery-chapter-kicker">
+                            <span class="gallery-chapter-num" id="galleryChapterNum">01</span><span class="gallery-chapter-of" id="galleryChapterTotal">/ 08</span>
+                        </span>
+                        <h3 class="gallery-chapter-title" id="galleryChapterTitle">Prashasti Patra — Jharkhand Govt</h3>
+                    </div>
+
                     <div class="gallery-viewport" id="galleryViewport">
                         <div class="gallery-grid" id="galleryGrid">
 
-                    <article class="gallery-item" data-cat="govt" data-art="art-1" data-image="images/appriation.jpg" data-kicker="Government Service" data-year="2025" data-title="Prashasti Patra — Jharkhand Govt" data-desc="Certificate of appreciation from the Production &amp; Industrial Relations Department, Government of Jharkhand, for successfully completing the Jharkhand Utpaad (Madira Ki Khudra Bikri Hetu Dukano Ki Bandobast) Niyamawali 2025 arrangements." data-tech="Jharkhand Sarkar|Excise|Public Administration" tabindex="0" role="button" aria-label="Open certificate 01: Prashasti Patra, Jharkhand Government">
+                    <article class="gallery-item is-active" data-cat="govt" data-art="art-1" data-image="images/appriation.jpg" data-kicker="Government Service" data-year="2025" data-title="Prashasti Patra — Jharkhand Govt" data-desc="Certificate of appreciation from the Production &amp; Industrial Relations Department, Government of Jharkhand, for successfully completing the Jharkhand Utpaad (Madira Ki Khudra Bikri Hetu Dukano Ki Bandobast) Niyamawali 2025 arrangements." data-tech="Jharkhand Sarkar|Excise|Public Administration" tabindex="0" role="button" aria-label="Open certificate 01: Prashasti Patra, Jharkhand Government">
                         <div class="gallery-media">
                             <img class="gallery-img" src="images/appriation.jpg" alt="Prashasti Patra from the Production &amp; Industrial Relations Department, Government of Jharkhand, awarded to Badal Singh, Senior Programmer" loading="lazy" decoding="async">
                             <span class="gallery-num">01</span>
                             <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
-                        </div>
-                        <div class="gallery-caption">
-                            <div class="gallery-meta">
-                                <span class="gallery-kicker">Government Service</span>
-                                <span class="gallery-year">2025</span>
-                            </div>
-                            <h3 class="gallery-title">Prashasti Patra — Jharkhand Govt</h3>
-                            <p class="gallery-desc">Appreciation letter for successfully completing shop arrangements under the Jharkhand Utpaad rules 2025.</p>
-                            <div class="gallery-tech">
-                                <span>Excise</span><span>Public Admin</span><span>Operations</span>
-                            </div>
                         </div>
                     </article>
 
@@ -1039,17 +1035,6 @@
                             <span class="gallery-num">02</span>
                             <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
                         </div>
-                        <div class="gallery-caption">
-                            <div class="gallery-meta">
-                                <span class="gallery-kicker">Government Workshop</span>
-                                <span class="gallery-year">2025</span>
-                            </div>
-                            <h3 class="gallery-title">UX &amp; Design System Workshop</h3>
-                            <p class="gallery-desc">Awareness and sensitization on User Experience and Design System by MeitY, Digital India, NeGD and NIC.</p>
-                            <div class="gallery-tech">
-                                <span>UX</span><span>Design System</span><span>Digital India</span>
-                            </div>
-                        </div>
                     </article>
 
                     <article class="gallery-item" data-cat="design" data-art="art-3" data-image="images/figma.jpg" data-kicker="Design Tooling" data-year="2024" data-title="Figma UI Design Playground" data-desc="Mindluster certificate of achievement for successfully completing the Figma UI design Playground basics course (Certified No. 3a8ebae2, 2024-11-21)." data-tech="Figma|UI Design|Prototyping" tabindex="0" role="button" aria-label="Open certificate 03: Figma UI Design Playground">
@@ -1057,17 +1042,6 @@
                             <img class="gallery-img" src="images/figma.jpg" alt="Mindluster certificate of achievement for the Figma UI design Playground basics course, awarded to Badal Singh" loading="lazy" decoding="async">
                             <span class="gallery-num">03</span>
                             <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
-                        </div>
-                        <div class="gallery-caption">
-                            <div class="gallery-meta">
-                                <span class="gallery-kicker">Design Tooling</span>
-                                <span class="gallery-year">2024</span>
-                            </div>
-                            <h3 class="gallery-title">Figma UI Design Playground</h3>
-                            <p class="gallery-desc">Course completion certificate on Figma UI design playground basics from Mindluster.</p>
-                            <div class="gallery-tech">
-                                <span>Figma</span><span>UI Design</span><span>Prototyping</span>
-                            </div>
                         </div>
                     </article>
 
@@ -1077,35 +1051,13 @@
                             <span class="gallery-num">04</span>
                             <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
                         </div>
-                        <div class="gallery-caption">
-                            <div class="gallery-meta">
-                                <span class="gallery-kicker">Full Stack Bootcamp</span>
-                                <span class="gallery-year">2024</span>
-                            </div>
-                            <h3 class="gallery-title">Full Stack Developer Bootcamp</h3>
-                            <p class="gallery-desc">6-week GeeksforGeeks course covering the journey from frontend to backend development.</p>
-                            <div class="gallery-tech">
-                                <span>Frontend</span><span>Backend</span><span>Full Stack</span>
-                            </div>
-                        </div>
                     </article>
 
                     <article class="gallery-item" data-cat="enterprise" data-art="art-5" data-image="images/cert-tata-vocational.jpg" data-kicker="Industrial Training" data-year="2022" data-title="Tata Steel Vocational Training" data-desc="Prashikshan 2022 certificate from Shavak Nanavati Technical Institute (ISO 9001:2015) for a vocational training programme at Tata Steel Ltd., Jamshedpur from 23 May to 20 June 2022, with a project on Window Based Database Management System." data-tech="Tata Steel|DBMS|Learning &amp; Development" tabindex="0" role="button" aria-label="Open certificate 05: Tata Steel Vocational Training">
                         <div class="gallery-media">
-                            <img class="gallery-img" src="images/cert-tata-vocational.jpg" alt="Prashikshan 2022 certificate for vocational training at Tata Steel Ltd. Jamshedpur, awarded to Badal Singh" loading="lazy" decoding="async">
+                            <img class="gallery-img is-portrait" src="images/cert-tata-vocational.jpg" alt="Prashikshan 2022 certificate for vocational training at Tata Steel Ltd. Jamshedpur, awarded to Badal Singh" loading="lazy" decoding="async">
                             <span class="gallery-num">05</span>
                             <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
-                        </div>
-                        <div class="gallery-caption">
-                            <div class="gallery-meta">
-                                <span class="gallery-kicker">Industrial Training</span>
-                                <span class="gallery-year">2022</span>
-                            </div>
-                            <h3 class="gallery-title">Tata Steel Vocational Training</h3>
-                            <p class="gallery-desc">Prashikshan 2022 programme at Tata Steel Ltd., Jamshedpur — project on Window Based Database Management System.</p>
-                            <div class="gallery-tech">
-                                <span>Tata Steel</span><span>DBMS</span><span>Training</span>
-                            </div>
                         </div>
                     </article>
 
@@ -1115,17 +1067,6 @@
                             <span class="gallery-num">06</span>
                             <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
                         </div>
-                        <div class="gallery-caption">
-                            <div class="gallery-meta">
-                                <span class="gallery-kicker">Productivity Suite</span>
-                                <span class="gallery-year">2022</span>
-                            </div>
-                            <h3 class="gallery-title">Advance Microsoft Excel</h3>
-                            <p class="gallery-desc">Tata Steel DigiShala e-learning certificate for completing the Advance Microsoft Excel programme.</p>
-                            <div class="gallery-tech">
-                                <span>MS Excel</span><span>Data</span><span>DigiShala</span>
-                            </div>
-                        </div>
                     </article>
 
                     <article class="gallery-item" data-cat="enterprise" data-art="art-7" data-image="images/cert-digishala-msoffice.jpg" data-kicker="Productivity Suite" data-year="2022" data-title="MS Office" data-desc="Tata Steel DigiShala e-learning certificate for successfully completing the MS Office programme on 25-06-2022, issued by Jaya Singh Panda, Chief Learning &amp; Development." data-tech="MS Office|DigiShala|Productivity" tabindex="0" role="button" aria-label="Open certificate 07: MS Office">
@@ -1134,43 +1075,23 @@
                             <span class="gallery-num">07</span>
                             <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
                         </div>
-                        <div class="gallery-caption">
-                            <div class="gallery-meta">
-                                <span class="gallery-kicker">Productivity Suite</span>
-                                <span class="gallery-year">2022</span>
-                            </div>
-                            <h3 class="gallery-title">MS Office</h3>
-                            <p class="gallery-desc">Tata Steel DigiShala e-learning certificate for completing the MS Office programme.</p>
-                            <div class="gallery-tech">
-                                <span>MS Office</span><span>Productivity</span><span>DigiShala</span>
-                            </div>
-                        </div>
                     </article>
 
                     <article class="gallery-item" data-cat="web" data-art="art-8" data-image="images/cert-mindluster-webdev.jpg" data-kicker="Web Development" data-year="2023" data-title="Introduction to Web Development" data-desc="Mindluster certificate of achievement (Certified No. 5519736973) for successfully completing a course about Introduction to Web Development on 2023-06-20." data-tech="Web Dev|HTML|CSS|Mindluster" tabindex="0" role="button" aria-label="Open certificate 08: Introduction to Web Development">
                         <div class="gallery-media">
-                            <img class="gallery-img" src="images/cert-mindluster-webdev.jpg" alt="Mindluster certificate of achievement for the Introduction to Web Development course, awarded to Badal Singh" loading="lazy" decoding="async">
+                            <img class="gallery-img is-portrait" src="images/cert-mindluster-webdev.jpg" alt="Mindluster certificate of achievement for the Introduction to Web Development course, awarded to Badal Singh" loading="lazy" decoding="async">
                             <span class="gallery-num">08</span>
                             <span class="gallery-open-hint"><i class="fas fa-expand"></i></span>
-                        </div>
-                        <div class="gallery-caption">
-                            <div class="gallery-meta">
-                                <span class="gallery-kicker">Web Development</span>
-                                <span class="gallery-year">2023</span>
-                            </div>
-                            <h3 class="gallery-title">Introduction to Web Development</h3>
-                            <p class="gallery-desc">Mindluster course certificate covering the fundamentals of web development.</p>
-                            <div class="gallery-tech">
-                                <span>Web Dev</span><span>HTML</span><span>CSS</span>
-                            </div>
                         </div>
                     </article>
 
                         </div>
                     </div>
 
+                    <nav class="gallery-chapters" id="galleryChapters" aria-label="Jump to certificate"></nav>
+
                     <div class="gallery-rail-footer">
-                        <span class="gallery-note">Official certificates · click any card to enlarge</span>
+                        <span class="gallery-note">Swipe or scroll up &amp; down · click any card to enlarge</span>
 
                         <div class="gallery-rail-progress" aria-hidden="true">
                             <span class="gallery-rail-bar" id="galleryBar"></span>
@@ -1178,11 +1099,11 @@
 
                         <div class="gallery-rail-nav">
                             <button type="button" class="gallery-arrow" id="galleryPrev" aria-label="Previous certificate">
-                                <i class="fas fa-arrow-left"></i>
+                                <i class="fas fa-arrow-up"></i>
                             </button>
                             <span class="gallery-rail-count"><span id="galleryRailActive">01</span><span class="lightbox-sep">/</span><span id="galleryRailTotal">08</span></span>
                             <button type="button" class="gallery-arrow" id="galleryNext" aria-label="Next certificate">
-                                <i class="fas fa-arrow-right"></i>
+                                <i class="fas fa-arrow-down"></i>
                             </button>
                         </div>
                     </div>
@@ -1456,7 +1377,7 @@
     </footer>
 
     <!-- Main JavaScript Logic -->
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=16"></script>
 
     <script type="application/ld+json">
     {

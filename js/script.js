@@ -620,7 +620,7 @@
     }
 
     /* ----------------------------------------------------------------------
-       Gallery rail — horizontal scroll showcase
+       Gallery rail — vertical flip showcase (swipe / scroll up & down)
        ---------------------------------------------------------------------- */
     function initGalleryRail() {
         var section = $('#gallery');
@@ -632,6 +632,10 @@
         var totalLabel = $('#galleryRailTotal');
         var prevBtn = $('#galleryPrev');
         var nextBtn = $('#galleryNext');
+        var chapterNum = $('#galleryChapterNum');
+        var chapterTotal = $('#galleryChapterTotal');
+        var chapterTitle = $('#galleryChapterTitle');
+        var chapterNav = $('#galleryChapters');
 
         if (!section || !shell || !viewport || !rail) {
             return;
@@ -666,16 +670,134 @@
                 if (totalLabel) {
                     totalLabel.textContent = '00';
                 }
+                if (chapterNum) {
+                    chapterNum.textContent = '00';
+                }
+                if (chapterTotal) {
+                    chapterTotal.textContent = '/ 00';
+                }
+                if (chapterTitle) {
+                    chapterTitle.textContent = 'No certificates';
+                }
                 return;
             }
 
             activeIndex = Math.max(0, Math.min(index, list.length - 1));
+
+            // Mark the focused card sharp; blur the rest (depth-of-field)
+            list.forEach(function (item, i) {
+                item.classList.toggle('is-active', i === activeIndex);
+            });
+
             if (activeLabel) {
                 activeLabel.textContent = pad2(activeIndex + 1);
             }
             if (totalLabel) {
                 totalLabel.textContent = pad2(list.length);
             }
+
+            // Chapter eyebrow — "Chapter 01 / 08 · title"
+            if (chapterNum) {
+                var nextNum = pad2(activeIndex + 1);
+
+                if (chapterNum.textContent !== nextNum) {
+                    chapterNum.textContent = nextNum;
+                    // Restart the flip animation on every chapter change
+                    chapterNum.classList.remove('is-flip');
+                    void chapterNum.offsetWidth;
+                    chapterNum.classList.add('is-flip');
+                }
+            }
+
+            if (chapterTotal) {
+                chapterTotal.textContent = '/ ' + pad2(list.length);
+            }
+
+            if (chapterTitle) {
+                var title = list[activeIndex].dataset.title || '';
+
+                if (chapterTitle.textContent !== title) {
+                    chapterTitle.textContent = title;
+                }
+            }
+
+            // Chapter index — highlight the active number
+            if (chapterNav) {
+                var dots = chapterNav.children;
+
+                for (var i = 0; i < dots.length; i++) {
+                    var isCurrent = i === activeIndex;
+
+                    dots[i].classList.toggle('active', isCurrent);
+
+                    if (isCurrent) {
+                        dots[i].setAttribute('aria-current', 'true');
+                    } else {
+                        dots[i].removeAttribute('aria-current');
+                    }
+                }
+            }
+        }
+
+        function buildChapterNav() {
+            if (!chapterNav) {
+                return;
+            }
+
+            var list = visibleItems();
+
+            chapterNav.innerHTML = '';
+            // One chapter needs no index — hide it
+            chapterNav.hidden = list.length < 2;
+
+            list.forEach(function (item, index) {
+                var button = document.createElement('button');
+                var title = item.dataset.title || ('Certificate ' + pad2(index + 1));
+
+                button.type = 'button';
+                button.className = 'gallery-chapter-dot';
+                button.setAttribute('aria-label', 'Go to certificate ' + (index + 1) + ' of ' + list.length + ': ' + title);
+
+                var num = document.createElement('span');
+                num.textContent = pad2(index + 1);
+                button.appendChild(num);
+
+                button.addEventListener('click', function () {
+                    goToChapter(index);
+                });
+
+                chapterNav.appendChild(button);
+            });
+        }
+
+        function goToChapter(index) {
+            var list = visibleItems();
+
+            if (!list.length) {
+                return;
+            }
+
+            var target = Math.max(0, Math.min(index, list.length - 1));
+
+            // Pinned desktop: one chapter = one scroll boundary inside the pin
+            if (railTrigger && desktopQuery.matches) {
+                var ratio = list.length > 1 ? target / (list.length - 1) : 0;
+
+                window.scrollTo({
+                    top: railTrigger.start + (railTrigger.end - railTrigger.start) * ratio,
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
+                });
+                return;
+            }
+
+            // Native stage (mobile / reduced motion): scroll the card to the top
+            var vpRect = viewport.getBoundingClientRect();
+            var itemRect = list[target].getBoundingClientRect();
+
+            viewport.scrollTo({
+                top: viewport.scrollTop + (itemRect.top - vpRect.top),
+                behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            });
         }
 
         function updateFromProgress(progress) {
@@ -685,13 +807,13 @@
         }
 
         function syncFromViewport() {
-            var max = viewport.scrollWidth - viewport.clientWidth;
-            var progress = max > 0 ? viewport.scrollLeft / max : 0;
+            var max = viewport.scrollHeight - viewport.clientHeight;
+            var progress = max > 0 ? viewport.scrollTop / max : 0;
             updateFromProgress(progress);
         }
 
         function railDistance() {
-            return Math.max(0, rail.scrollWidth - viewport.clientWidth);
+            return Math.max(0, rail.scrollHeight - viewport.clientHeight);
         }
 
         function killDesktopRail() {
@@ -725,8 +847,10 @@
             gsap.registerPlugin(window.ScrollTrigger);
             viewport.classList.add('is-pinned');
 
+            var chapters = visibleItems().length;
+
             var tween = gsap.to(rail, {
-                x: function () {
+                y: function () {
                     return -railDistance();
                 },
                 ease: 'none',
@@ -738,9 +862,21 @@
                     },
                     pin: true,
                     pinSpacing: true,
-                    scrub: 0.8,
+                    scrub: 0.5,
                     anticipatePin: 1,
                     invalidateOnRefresh: true,
+                    // Chapter-based scrolling: whenever the user pauses, the page
+                    // settles on the nearest chapter boundary — never between two
+                    // chapters (same behaviour as the Rolex Oyster Story chapters).
+                    // inertia:false disables GSAP's velocity projection so arrow /
+                    // chapter-number jumps always land on their exact chapter.
+                    snap: chapters > 1 ? {
+                        snapTo: 1 / (chapters - 1),
+                        duration: { min: 0.2, max: 0.55 },
+                        delay: 0.06,
+                        inertia: false,
+                        ease: 'power1.inOut'
+                    } : false,
                     onUpdate: function (self) {
                         updateFromProgress(self.progress);
                     }
@@ -755,8 +891,9 @@
             var wasPinned = Boolean(railTrigger && window.scrollY >= railTrigger.start);
             var naturalTop = 0;
 
-            viewport.scrollLeft = 0;
+            viewport.scrollTop = 0;
             killDesktopRail();
+            buildChapterNav();
 
             if (typeof window.ScrollTrigger !== 'undefined') {
                 window.ScrollTrigger.refresh();
@@ -792,32 +929,7 @@
         }
 
         function step(direction) {
-            var list = visibleItems();
-
-            if (!list.length) {
-                return;
-            }
-
-            if (railTrigger && desktopQuery.matches) {
-                var targetIndex = Math.max(0, Math.min(activeIndex + direction, list.length - 1));
-                var ratio = list.length > 1 ? targetIndex / (list.length - 1) : 0;
-                var targetY = railTrigger.start + (railTrigger.end - railTrigger.start) * ratio;
-
-                window.scrollTo({
-                    top: targetY,
-                    behavior: prefersReducedMotion ? 'auto' : 'smooth'
-                });
-                return;
-            }
-
-            var cardWidth = list[0].getBoundingClientRect().width;
-            var styles = window.getComputedStyle(rail);
-            var gap = parseFloat(styles.columnGap || styles.gap) || 16;
-
-            viewport.scrollBy({
-                left: direction * (cardWidth + gap),
-                behavior: prefersReducedMotion ? 'auto' : 'smooth'
-            });
+            goToChapter(activeIndex + direction);
         }
 
         viewport.addEventListener('scroll', function () {
@@ -845,9 +957,9 @@
                     var ratio = list.length > 1 ? index / (list.length - 1) : 0;
 
                     // The browser may try to reveal a focused card inside the
-                    // pinned viewport. Keep the rail at scrollLeft 0 and move
+                    // pinned viewport. Keep the rail at scrollTop 0 and move
                     // the page instead so the GSAP transform stays in sync.
-                    viewport.scrollLeft = 0;
+                    viewport.scrollTop = 0;
 
                     if (Math.abs(railTrigger.progress - ratio) > 0.015) {
                         window.scrollTo({
@@ -859,14 +971,15 @@
                 }
 
                 var rect = item.getBoundingClientRect();
+                var stageRect = viewport.getBoundingClientRect();
 
-                if (rect.left >= 8 && rect.right <= window.innerWidth - 8) {
+                if (rect.top >= stageRect.top + 8 && rect.bottom <= stageRect.bottom - 8) {
                     return;
                 }
 
                 item.scrollIntoView({
-                    block: 'nearest',
-                    inline: 'center',
+                    block: 'center',
+                    inline: 'nearest',
                     behavior: prefersReducedMotion ? 'auto' : 'smooth'
                 });
             });
@@ -897,13 +1010,14 @@
                     refreshRail();
                 } else {
                     killDesktopRail();
-                    viewport.scrollLeft = 0;
+                    viewport.scrollTop = 0;
                     updateFromProgress(0);
                     syncFromViewport();
                 }
             }, 180);
         });
 
+        buildChapterNav();
         setActive(0);
         createDesktopRail();
     }
